@@ -1,0 +1,28 @@
+{% extends 'login.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}        
+        <!-- masthead3-->
+        <header class="masthead3">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-end">
+                        <h1 class="text-uppercase text-white font-weight-bold">Face Recognition and Attendance System</h1>
+                        <hr class="divider my-4" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <form action="/detect" method="POST"> 
+                            {% csrf_token %}   
+                                <div class="d-flex justify-content-center mt-3 login_container">
+                                    <button class="btn float-right login_btn" value="detect" type="submit">Detect</button>
+                                </div>
+                                <div class="form-group input-group"></div>      
+                        </form>
+                        <p class="text-white-75 font-weight-light mb-5">{{message}}</p>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="/">Home</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+{%endblock%}        
